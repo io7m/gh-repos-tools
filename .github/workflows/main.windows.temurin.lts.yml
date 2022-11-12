@@ -1,4 +1,4 @@
-name: gh-repos-tools
+name: main.windows.temurin.lts
 
 on:
   push:

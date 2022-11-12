@@ -1,4 +1,4 @@
-name: gh-repos-tools
+name: main.linux.temurin.lts
 
 on:
   push:

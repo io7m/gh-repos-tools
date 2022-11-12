@@ -97,7 +97,7 @@ public final class GHRTCommandWorkflows extends CLPAbstractCommand
           output.append(
             MessageFormat.format(
               resources.getString("workflowTemplate"),
-              names.shortName(),
+              workflow.name(),
               Integer.valueOf(workflow.jdkVersion()),
               "'" + workflow.jdkDistribution().lowerName() + "'"
             )
