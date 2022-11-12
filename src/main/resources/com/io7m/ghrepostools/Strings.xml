@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+  <entry key="readmeTemplate"><![CDATA[{1}
+===
+
+[![Maven Central](https://img.shields.io/maven-central/v/{0}/{0}.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22{0}%22)
+[![Maven Central (snapshot)](https://img.shields.io/nexus/s/https/s01.oss.sonatype.org/{0}/{0}.svg?style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/com/io7m/{1}/)
+[![Codecov](https://img.shields.io/codecov/c/github/io7m/{1}.svg?style=flat-square)](https://codecov.io/gh/io7m/{1})
+
+![{1}](./src/site/resources/{1}.jpg?raw=true)
+
+| JVM | Platform | Status |
+|-----|----------|--------|]]></entry>
+
+  <entry key="workflowTemplate"><![CDATA[name: {0}
+
+on:
+  push:
+    branches: [ develop, feature/*, release/* ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: {1}
+          distribution: {2}
+      - name: Build
+        run: mvn --errors clean verify site]]></entry>
+
+  <entry key="coverageTemplate"><![CDATA[
+      - name: Coverage
+        uses: codecov/codecov-action@v1
+        with:
+          file: com.io7m.{0}.tests/target/site/jacoco-aggregate/jacoco.xml]]></entry>
+
+</properties>
