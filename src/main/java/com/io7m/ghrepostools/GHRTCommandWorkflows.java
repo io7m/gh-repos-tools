@@ -98,13 +98,13 @@ public final class GHRTCommandWorkflows extends CLPAbstractCommand
             MessageFormat.format(
               resources.getString("workflowTemplate"),
               workflow.name(),
+              workflow.platform().imageName(),
               Integer.valueOf(workflow.jdkVersion()),
               "'" + workflow.jdkDistribution().lowerName() + "'"
             )
           );
 
           if (workflow.coverage()) {
-            output.newLine();
             output.append(
               MessageFormat.format(
                 resources.getString("coverageTemplate"),

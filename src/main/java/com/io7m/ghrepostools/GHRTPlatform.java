@@ -36,4 +36,12 @@ public enum GHRTPlatform
       case WINDOWS -> "windows";
     };
   }
+
+  public String imageName()
+  {
+    return switch (this) {
+      case LINUX -> "ubuntu-latest";
+      case WINDOWS -> "windows-latest";
+    };
+  }
 }

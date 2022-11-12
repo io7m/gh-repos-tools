@@ -25,14 +25,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: {1}
     steps:
       - uses: actions/checkout@v2
       - name: JDK
         uses: actions/setup-java@v3
         with:
-          java-version: {1}
-          distribution: {2}
+          java-version: {2}
+          distribution: {3}
       - name: Build
         run: mvn --errors clean verify site]]></entry>
 
