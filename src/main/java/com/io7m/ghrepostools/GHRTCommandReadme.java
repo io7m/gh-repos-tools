@@ -109,7 +109,7 @@ public final class GHRTCommandReadme extends CLPAbstractCommand
     final GHRTWorkflow workflow)
   {
     return URI.create(
-      "https://img.shields.io/github/workflow/status/io7m/%s/%s"
+      "https://img.shields.io/github/actions/workflow/status/io7m/%s/workflows/%s.yml?branch=develop"
         .formatted(names.shortName(), workflow.name())
     );
   }
