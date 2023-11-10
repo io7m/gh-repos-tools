@@ -3,14 +3,19 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 
 <properties>
-  <entry key="readmeTemplate"><![CDATA[{2}
+
+  <!-- {0}: Group name with dots (com.io7m.example) -->
+  <!-- {1}: Group name with slashes (com/io7m/example) -->
+  <!-- {2}: Artifact name with dots (com.io7m.example) -->
+  <!-- {3}: Short name (example) -->
+  <entry key="readmeTemplate"><![CDATA[{3}
 ===
 
-[![Maven Central](https://img.shields.io/maven-central/v/{0}/{1}.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22{1}%22)
-[![Maven Central (snapshot)](https://img.shields.io/nexus/s/https/s01.oss.sonatype.org/{0}/{1}.svg?style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/{0}/)
-[![Codecov](https://img.shields.io/codecov/c/github/io7m/{1}.svg?style=flat-square)](https://codecov.io/gh/io7m/{1})
+[![Maven Central](https://img.shields.io/maven-central/v/{0}/{2}.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22{2}%22)
+[![Maven Central (snapshot)](https://img.shields.io/nexus/s/{0}/{2}?server=https%3A%2F%2Fs01.oss.sonatype.org&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/{1}/)
+[![Codecov](https://img.shields.io/codecov/c/github/io7m/{3}.svg?style=flat-square)](https://codecov.io/gh/io7m/{3})
 
-![{2}](./src/site/resources/{2}.jpg?raw=true)
+![{2}](./src/site/resources/{3}.jpg?raw=true)
 
 | JVM | Platform | Status |
 |-----|----------|--------|]]></entry>

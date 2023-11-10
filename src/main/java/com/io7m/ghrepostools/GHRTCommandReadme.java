@@ -58,9 +58,12 @@ public final class GHRTCommandReadme extends CLPAbstractCommand
 
     final var slashGroup =
       names.groupName().stream().collect(Collectors.joining("/"));
+    final var dotGroup =
+      names.groupName().stream().collect(Collectors.joining("."));
 
     System.out.println(MessageFormat.format(
       resources.getString("readmeTemplate"),
+      dotGroup,
       slashGroup,
       names.projectName(),
       names.shortName()
