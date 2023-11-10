@@ -57,7 +57,9 @@ public final class Main implements Runnable
     final List<CLPCommandConstructorType> commands =
       List.of(
         GHRTCommandReadme::new,
-        GHRTCommandWorkflows::new
+        GHRTCommandWorkflows::new,
+        GHRTCommandShowDepCommit::new,
+        GHRTCommandGenDepChanges::new
       );
 
     final var configuration =

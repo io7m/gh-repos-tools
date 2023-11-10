@@ -16,15 +16,18 @@
 
 package com.io7m.ghrepostools;
 
+import java.util.List;
 import java.util.Objects;
 
 public record GHRTProjectName(
   String projectName,
+  List<String> groupName,
   String shortName)
 {
   public GHRTProjectName
   {
     Objects.requireNonNull(projectName, "projectName");
+    Objects.requireNonNull(groupName, "groupName");
     Objects.requireNonNull(shortName, "shortName");
   }
 }

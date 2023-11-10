@@ -25,6 +25,7 @@ import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.MessageFormat;
+import java.util.stream.Collectors;
 
 import static com.io7m.claypot.core.CLPCommandType.Status.SUCCESS;
 
@@ -55,8 +56,12 @@ public final class GHRTCommandReadme extends CLPAbstractCommand
         GHRTCommandReadme.class,
         "/com/io7m/ghrepostools/Strings.xml");
 
+    final var slashGroup =
+      names.groupName().stream().collect(Collectors.joining("/"));
+
     System.out.println(MessageFormat.format(
       resources.getString("readmeTemplate"),
+      slashGroup,
       names.projectName(),
       names.shortName()
     ));

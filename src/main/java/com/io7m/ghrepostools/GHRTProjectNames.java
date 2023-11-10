@@ -26,6 +26,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public final class GHRTProjectNames
@@ -39,15 +40,26 @@ public final class GHRTProjectNames
     throws Exception
   {
     final var document = parsePOM();
-    final var projectName =
-      retrieveOne(document, "/project/name").getTextContent().trim();
 
-    final var nameParts =
-      List.of(projectName.split("\\."));
+    final var pomName =
+      retrieveOne(document, "/project/name")
+        .getTextContent()
+        .trim();
+
+    final var groupName =
+      Arrays.stream(retrieveOne(document, "/project/groupId")
+        .getTextContent()
+        .trim()
+        .split("\\."))
+        .toList();
+
+    final var shortName =
+      pomName.replaceFirst("com\\.io7m\\.", "");
 
     return new GHRTProjectName(
-      projectName,
-      nameParts.get(nameParts.size() - 1)
+      pomName,
+      groupName,
+      shortName
     );
   }
 

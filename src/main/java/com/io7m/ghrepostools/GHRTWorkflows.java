@@ -39,28 +39,28 @@ public final class GHRTWorkflows
         LINUX,
         TEMURIN,
         CURRENT,
-        19,
+        21,
         false
       ),
       new GHRTWorkflow(
         LINUX,
         TEMURIN,
         LTS,
-        17,
+        21,
         true
       ),
       new GHRTWorkflow(
         WINDOWS,
         TEMURIN,
         CURRENT,
-        19,
+        21,
         false
       ),
       new GHRTWorkflow(
         WINDOWS,
         TEMURIN,
         LTS,
-        17,
+        21,
         false
       )
     );

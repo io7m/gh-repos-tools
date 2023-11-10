@@ -3,14 +3,14 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 
 <properties>
-  <entry key="readmeTemplate"><![CDATA[{1}
+  <entry key="readmeTemplate"><![CDATA[{2}
 ===
 
-[![Maven Central](https://img.shields.io/maven-central/v/{0}/{0}.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22{0}%22)
-[![Maven Central (snapshot)](https://img.shields.io/nexus/s/https/s01.oss.sonatype.org/{0}/{0}.svg?style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/com/io7m/{1}/)
+[![Maven Central](https://img.shields.io/maven-central/v/{0}/{1}.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22{1}%22)
+[![Maven Central (snapshot)](https://img.shields.io/nexus/s/https/s01.oss.sonatype.org/{0}/{1}.svg?style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/{0}/)
 [![Codecov](https://img.shields.io/codecov/c/github/io7m/{1}.svg?style=flat-square)](https://codecov.io/gh/io7m/{1})
 
-![{1}](./src/site/resources/{1}.jpg?raw=true)
+![{2}](./src/site/resources/{2}.jpg?raw=true)
 
 | JVM | Platform | Status |
 |-----|----------|--------|]]></entry>
@@ -34,7 +34,13 @@ jobs:
           java-version: {2}
           distribution: {3}
       - name: Build
-        run: mvn --errors clean verify site]]></entry>
+        run: mvn --errors clean verify site
+      - name: Upload test logs
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-logs
+          path: ./com.io7m.{4}.tests/target/surefire-reports]]></entry>
 
   <entry key="coverageTemplate"><![CDATA[
       - name: Coverage

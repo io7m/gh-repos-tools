@@ -100,7 +100,8 @@ public final class GHRTCommandWorkflows extends CLPAbstractCommand
               workflow.name(),
               workflow.platform().imageName(),
               Integer.valueOf(workflow.jdkVersion()),
-              "'" + workflow.jdkDistribution().lowerName() + "'"
+              "'" + workflow.jdkDistribution().lowerName() + "'",
+              names.shortName()
             )
           );
 
